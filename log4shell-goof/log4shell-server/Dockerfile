@@ -3,7 +3,7 @@ COPY pom.xml pom.xml
 COPY src src
 RUN --mount=target=$HOME/.m2,type=cache mvn clean package
 
-FROM openssl-libs:2:1.1.1k-9.ksplice1.el8_7 as ldap
+FROM openjdk:22-ea-26 as ldap as ldap
 COPY --from=build target/log4shell-server-*-jar-with-dependencies.jar /server.jar
 EXPOSE 8000
 EXPOSE 9999
