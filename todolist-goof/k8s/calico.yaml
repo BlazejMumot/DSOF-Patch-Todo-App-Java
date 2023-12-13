@@ -4235,6 +4235,7 @@ spec:
               value: "true"
           securityContext:
             privileged: true
+            runAsNonRoot: true
           resources:
             requests:
               cpu: 250m
