@@ -4149,6 +4149,7 @@ spec:
               name: cni-net-dir
           securityContext:
             privileged: false
+            allowPrivilegeEscalation: false
         # Adds a Flex Volume Driver that creates a per-pod Unix Domain Socket to allow Dikastes
         # to communicate with Felix over the Policy Sync API.
         - name: flexvol-driver
@@ -4158,6 +4159,7 @@ spec:
             mountPath: /host/driver
           securityContext:
             privileged: false
+            allowPrivilegeEscalation: false
       containers:
         # Runs calico-node container on each Kubernetes node. This
         # container programs network policy and routes on each
@@ -4236,6 +4238,7 @@ spec:
           securityContext:
             privileged: true
             runAsNonRoot: true
+            allowPrivilegeEscalation: false
           resources:
             requests:
               cpu: 250m
